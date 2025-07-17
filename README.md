@@ -1,89 +1,89 @@
-# 个人网站 Portfolio
+# Personal Portfolio Website
 
-基于 Next.js 15 + TypeScript + Tailwind CSS + Vanta.js 构建的现代化单页滚动个人网站。
+A modern single-page scrolling personal website built with Next.js 15 + TypeScript + Tailwind CSS + Vanta.js.
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
 ```bash
-# 安装依赖
+# Install dependencies
 npm install
 
-# 启动开发服务器
+# Start development server
 npm run dev
 
-# 构建生产版本
+# Build production version
 npm run build
 ```
 
-## 📁 项目结构
+## 📁 Project Structure
 
 ```
 resume-app/
 ├── app/                    # Next.js App Router
-│   ├── page.tsx           # 单页滚动主页面
-│   ├── layout.tsx         # 根布局
-│   └── globals.css        # 全局样式
-├── components/            # 可复用组件
-│   ├── Navigation.tsx     # 锚点导航组件
-│   ├── VantaBackground.tsx # Vanta.js动画背景
-│   ├── ScrollArrow.tsx    # 滚动箭头组件
-│   ├── sections/          # 页面区域组件
-│   │   ├── HomeSection.tsx    # Home区域
-│   │   ├── ProjectSection.tsx # Project区域
-│   │   └── AboutSection.tsx   # About区域
-│   └── index.ts          # 组件导出
-├── hooks/                # 自定义Hooks
-│   └── useScrollWheel.ts # 滚轮监听Hook
-├── types/                # TypeScript类型定义
-│   └── vanta.d.ts        # Vanta.js类型
+│   ├── page.tsx           # Single-page scrolling main page
+│   ├── layout.tsx         # Root layout
+│   └── globals.css        # Global styles
+├── components/            # Reusable components
+│   ├── Navigation.tsx     # Anchor navigation component
+│   ├── VantaBackground.tsx # Vanta.js animation background
+│   ├── ScrollArrow.tsx    # Scroll arrow component
+│   ├── sections/          # Page section components
+│   │   ├── HomeSection.tsx    # Home section
+│   │   ├── ProjectSection.tsx # Project section
+│   │   └── AboutSection.tsx   # About section
+│   └── index.ts          # Component exports
+├── hooks/                # Custom Hooks
+│   └── useScrollWheel.ts # Scroll wheel listener Hook
+├── types/                # TypeScript type definitions
+│   └── vanta.d.ts        # Vanta.js types
 └── ...
 ```
 
-## 🎯 页面结构
+## 🎯 Page Structure
 
-**单页滚动设计** - 三个全屏区域：
+**Single-page scrolling design** - Three full-screen sections:
 
-- **Home** - 主页区域，集成Vanta.js HALO动画背景
-- **Project** - 项目展示区域
-- **About** - 个人介绍区域
+- **Home** - Main section with integrated Vanta.js HALO animation background
+- **Project** - Project showcase section
+- **About** - Personal introduction section
 
-## ✨ 滚动功能
+## ✨ Scrolling Features
 
-### 🖱️ 多种滚动方式
+### 🖱️ Multiple Scrolling Methods
 
-1. **鼠标滚轮** - 智能检测滚动方向，自动跳转到下一个/上一个区域
-2. **导航栏点击** - 点击导航菜单直接跳转到指定区域
-3. **滚动箭头** - 每个区域底部的上下箭头按钮
+1. **Mouse Wheel** - Intelligently detects scroll direction, automatically jumps to next/previous section
+2. **Navigation Bar Click** - Click navigation menu to jump directly to specified section
+3. **Scroll Arrows** - Up and down arrow buttons at the bottom of each section
 
-### 🎭 滚动特性
+### 🎭 Scrolling Characteristics
 
-- ⚡ **平滑滚动** - CSS scroll-behavior 和 JavaScript scrollIntoView
-- 🎯 **智能跳转** - 滚轮监听自动跳转到完整区域
-- 📍 **活跃指示** - 导航栏实时高亮当前区域
-- 🚫 **防抖处理** - 防止滚动过快导致的跳跃
-- 📱 **响应式** - 完美适配桌面端和移动端
+- ⚡ **Smooth Scrolling** - CSS scroll-behavior and JavaScript scrollIntoView
+- 🎯 **Smart Jump** - Wheel listener automatically jumps to complete sections
+- 📍 **Active Indicator** - Navigation bar highlights current section in real-time
+- 🚫 **Debounce Handling** - Prevents jumping due to too fast scrolling
+- 📱 **Responsive** - Perfect adaptation for desktop and mobile
 
-## 🛠️ 技术栈
+## 🛠️ Tech Stack
 
-- **框架**: Next.js 15 (App Router)
-- **语言**: TypeScript
-- **样式**: Tailwind CSS
-- **动画**: Vanta.js + Three.js
-- **滚动**: 自定义滚轮监听 + CSS smooth scroll
-- **开发工具**: ESLint
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animation**: Vanta.js + Three.js
+- **Scrolling**: Custom wheel listener + CSS smooth scroll
+- **Development Tools**: ESLint
 
-## 🎨 设计特性
+## 🎨 Design Features
 
-- 🌟 **Vanta.js 3D动画背景** - Home区域炫酷动态效果
-- 🎭 **毛玻璃导航栏** - 半透明背景模糊效果
-- 🔘 **精美滚动箭头** - 半透明圆形按钮设计
-- 📱 **完全响应式** - 适配各种屏幕尺寸
-- 🎨 **现代化设计** - 简洁优雅的视觉风格
+- 🌟 **Vanta.js 3D Animation Background** - Cool dynamic effects in Home section
+- 🎭 **Frosted Glass Navigation Bar** - Semi-transparent background blur effect
+- 🔘 **Beautiful Scroll Arrows** - Semi-transparent circular button design
+- 📱 **Fully Responsive** - Adapts to various screen sizes
+- 🎨 **Modern Design** - Clean and elegant visual style
 
-访问 [http://localhost:3000](http://localhost:3000) 查看效果。
+Visit [http://localhost:3000](http://localhost:3000) to see the effect.
 
-## 🎮 使用方法
+## 🎮 Usage Instructions
 
-1. **滚动体验**: 使用鼠标滚轮在三个区域间平滑切换
-2. **快速导航**: 点击顶部导航栏直接跳转
-3. **精确控制**: 使用页面底部箭头按钮逐个区域导航
+1. **Scrolling Experience**: Use mouse wheel to smoothly switch between three sections
+2. **Quick Navigation**: Click top navigation bar to jump directly
+3. **Precise Control**: Use arrow buttons at bottom of pages for section-by-section navigation

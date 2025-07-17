@@ -29,7 +29,7 @@ export default function ScrollArrow({ direction, targetId, onClick, className = 
         transition-all duration-300 hover:scale-110
         ${className}
       `}
-      title={direction === 'up' ? '向上滚动' : '向下滚动'}
+      title={direction === 'up' ? 'Scroll up' : 'Scroll down'}
     >
       <svg 
         className={`w-6 h-6 text-white transition-transform duration-300 group-hover:scale-110 ${

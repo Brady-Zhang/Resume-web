@@ -11,7 +11,7 @@ const navItems = [
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
 
-  // 监听滚动事件来更新活跃的导航项
+  // Listen to scroll events to update active navigation item
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'project', 'about'];
@@ -32,7 +32,7 @@ export default function Navigation() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // 初始化检查
+    handleScroll(); // Initial check
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -48,7 +48,7 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <div className="text-xl font-bold text-white">
-            个人网站
+            Portfolio
           </div>
           <div className="flex space-x-8">
             {navItems.map((item) => (

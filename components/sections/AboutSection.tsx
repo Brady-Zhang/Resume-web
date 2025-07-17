@@ -10,7 +10,7 @@ export default function AboutSection() {
               About Me
             </h1>
             <p className="text-xl text-gray-600 mb-12">
-              关于页面内容待完善
+              About content coming soon
             </p>
           </div>
           
@@ -22,21 +22,21 @@ export default function AboutSection() {
             </div>
             
             <div className="space-y-6">
-              <h3 className="text-2xl font-semibold">你好，我是...</h3>
+              <h3 className="text-2xl font-semibold">Hello, I'm...</h3>
               <p className="text-gray-700 leading-relaxed">
-                这里将介绍个人信息、技能、经历等内容...
+                Here will introduce personal information, skills, experience, and other content...
               </p>
               
               <div className="space-y-4">
-                <h4 className="text-xl font-semibold">技能专长</h4>
+                <h4 className="text-xl font-semibold">Skills & Expertise</h4>
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     "JavaScript/TypeScript",
                     "React/Next.js", 
                     "Node.js",
                     "Python",
-                    "数据库设计",
-                    "UI/UX设计"
+                    "Database Design",
+                    "UI/UX Design"
                   ].map((skill, index) => (
                     <div 
                       key={index}
@@ -51,10 +51,10 @@ export default function AboutSection() {
               
               <div className="flex space-x-4 pt-6">
                 <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300">
-                  联系我
+                  Contact Me
                 </button>
                 <button className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300">
-                  下载简历
+                  Download Resume
                 </button>
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function AboutSection() {
         </div>
       </div>
       
-      {/* 向上滚动箭头 */}
+      {/* Scroll up arrow */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <ScrollArrow direction="up" targetId="project" />
       </div>
