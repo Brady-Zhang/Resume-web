@@ -7,9 +7,18 @@ interface VantaBackgroundProps {
   className?: string;
 }
 
+interface VantaLib {
+  HALO?: (options: any) => any;
+}
+
+interface WindowWithVanta extends Window {
+  VANTA?: VantaLib;
+  THREE?: any;
+}
+
 export default function VantaBackground({ children, className = "" }: VantaBackgroundProps) {
   const vantaRef = useRef<HTMLDivElement>(null);
-  const vantaEffect = useRef<ReturnType<typeof import('vanta/dist/vanta.halo.min.js').HALO> | null>(null);
+  const vantaEffect = useRef<any>(null);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -26,13 +35,13 @@ export default function VantaBackground({ children, className = "" }: VantaBackg
         ]);
 
         // Set global THREE object
-        (window as unknown as { THREE: typeof THREE })['THREE'] = THREE;
+        (window as WindowWithVanta).THREE = THREE;
 
         // Wait a bit to ensure libraries are fully loaded
         await new Promise(resolve => setTimeout(resolve, 100));
 
         // Check if VANTA is available
-        const vantaLib = (window as any).VANTA || VANTA;
+        const vantaLib = (window as WindowWithVanta).VANTA || VANTA;
 
         if (vantaLib && vantaLib.HALO && vantaRef.current && !vantaEffect.current) {
           vantaEffect.current = vantaLib.HALO({
