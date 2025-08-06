@@ -9,7 +9,7 @@ interface VantaBackgroundProps {
 
 export default function VantaBackground({ children, className = "" }: VantaBackgroundProps) {
   const vantaRef = useRef<HTMLDivElement>(null);
-  const vantaEffect = useRef<any>(null);
+  const vantaEffect = useRef<ReturnType<typeof import('vanta/dist/vanta.halo.min.js').HALO> | null>(null);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -19,21 +19,21 @@ export default function VantaBackground({ children, className = "" }: VantaBackg
       try {
         if (typeof window === 'undefined' || !vantaRef.current) return;
 
-        // 动态导入Three.js和Vanta
+        // Dynamic import of Three.js and Vanta
         const [THREE, VANTA] = await Promise.all([
           import('three'),
           import('vanta/dist/vanta.halo.min.js')
         ]);
 
-        // 设置全局THREE对象
-        (window as any).THREE = THREE;
+        // Set global THREE object
+        (window as unknown as { THREE: typeof THREE })['THREE'] = THREE;
 
-        // 等待一下确保库完全加载
+        // Wait a bit to ensure libraries are fully loaded
         await new Promise(resolve => setTimeout(resolve, 100));
 
-        // 检查VANTA是否可用
+        // Check if VANTA is available
         const vantaLib = (window as any).VANTA || VANTA;
-        
+
         if (vantaLib && vantaLib.HALO && vantaRef.current && !vantaEffect.current) {
           vantaEffect.current = vantaLib.HALO({
             el: vantaRef.current,
@@ -43,9 +43,9 @@ export default function VantaBackground({ children, className = "" }: VantaBackg
             gyroControls: false,
             minHeight: 200.00,
             minWidth: 200.00,
-            backgroundColor: 0x61a31,  // 使用你提供的颜色
-            xOffset: 0.21,            // 使用你提供的参数
-            size: 1.40               // 使用你提供的参数
+            backgroundColor: 0x61a31,  // Using user-provided color
+            xOffset: 0.21,            // Using user-provided parameter
+            size: 1.40               // Using user-provided parameter
           });
         }
       } catch (error) {
@@ -68,11 +68,11 @@ export default function VantaBackground({ children, className = "" }: VantaBackg
     };
   }, []);
 
-  // 服务器端渲染时显示简单背景
+  // Render simple background on server-side
   if (!isMounted) {
     return (
-      <div 
-        ref={vantaRef} 
+      <div
+        ref={vantaRef}
         className={`relative ${className}`}
         style={{ width: '100%', height: '100%' }}
       >
@@ -83,8 +83,8 @@ export default function VantaBackground({ children, className = "" }: VantaBackg
   }
 
   return (
-    <div 
-      ref={vantaRef} 
+    <div
+      ref={vantaRef}
       className={`relative ${className}`}
       style={{ width: '100%', height: '100%' }}
     >

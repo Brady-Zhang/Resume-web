@@ -23,7 +23,7 @@ export default function AboutSection() {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-white">Hello, I'm Brady</h3>
+              <h3 className="text-2xl font-semibold text-white">Hello, I&apos;m Brady</h3>
               <p className="text-gray-300 leading-relaxed">
                 Here will introduce personal information, skills, experience, and other content...
               </p>

@@ -1,4 +1,5 @@
 import ScrollArrow from '../ScrollArrow';
+import Image from 'next/image';
 
 export default function ProjectSection() {
   return (
@@ -21,10 +22,13 @@ export default function ProjectSection() {
               className="bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700 hover:border-gray-600 overflow-hidden group transform hover:scale-105"
             >
               <div className="aspect-video bg-gray-700 overflow-hidden">
-                <img 
+                <Image 
                   src="/1.png" 
                   alt="REAMP Project" 
+                  width={800}
+                  height={450}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  priority
                 />
               </div>
               <div className="p-8">
@@ -51,10 +55,13 @@ export default function ProjectSection() {
               className="bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700 hover:border-gray-600 overflow-hidden group transform hover:scale-105"
             >
               <div className="aspect-video bg-gray-700 overflow-hidden">
-                <img 
+                <Image 
                   src="/2.png" 
                   alt="Meetly Omni Project" 
+                  width={800}
+                  height={450}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  priority
                 />
               </div>
               <div className="p-8">
